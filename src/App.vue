@@ -6,7 +6,7 @@ const newItem = ref('')
 const items = ref([])
 
 function addItem() {
-  items.value.push({ id: id++, text: newItem.value })
+  items.value.push({ id: id++, task: newItem.value })
   newItem.value = ''
 }
 
@@ -21,7 +21,7 @@ function removeItem(item) {
   
   <ul>
     <li v-for="item in items" :key="item.id">
-      {{ item.text }}
+      {{ item.task }}
       <button @click="removeItem(item)">Delete</button>
     </li>
   </ul>
