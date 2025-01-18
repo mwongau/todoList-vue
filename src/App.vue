@@ -16,13 +16,34 @@ function removeItem(item) {
 </script>
 
 <template>
-    <input v-model="newItem" placeholder="Enter new item"> &nbsp;
-    <button @click="addItem">Add</button>
+    <input class="myinput" v-model="newItem" placeholder="Enter new item"> &nbsp;
+    <button class="mybutton" @click="addItem">Add</button>
   
   <ul>
     <li v-for="item in items" :key="item.id">
       {{ item.task }}
-      <button @click="removeItem(item)">Delete</button>
+      <button class="mybutton"  @click="removeItem(item)">Delete</button>
     </li>
   </ul>
 </template>
+
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.myinput {
+  width: 200px;
+  padding: 5px;
+}
+
+.mybutton {
+  background-color: lightblue;
+  padding: 3px;
+  margin: 3px;
+}
+</style>
